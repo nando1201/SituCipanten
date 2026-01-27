@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,30 +14,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = ["Beranda", "Tentang", "Fasilitas", "Aktivitas", "Galeri", "Info", "Kontak"];
+  const isHome = location.pathname === "/";
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
+  const menuItems = [
+    { name: "Beranda", path: "/" },
+    { name: "Tentang", path: "/tentang" },
+    { name: "Fasilitas", path: "/fasilitas" },
+    { name: "Aktivitas", path: "/aktivitas" },
+    { name: "Galeri", path: "/galeri" },
+    { name: "Info", path: "/info" },
+    { name: "Kontak", path: "/kontak" },
+  ];
 
   return (
     <motion.nav
@@ -43,59 +32,63 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        isHome && !scrolled
+          ? "bg-transparent"
+          : "bg-white/80 backdrop-blur-sm shadow-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <motion.h1
-          className={`text-xl font-bold transition ${
-            scrolled ? "text-green-700" : "text-white"
-          }`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Situ Cipanten
-        </motion.h1>
+        <motion.div whileHover={{ scale: 1.05 }}>
+          <NavLink
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className={`text-xl font-bold transition-colors duration-300 ${
+              isHome && !scrolled
+                ? "text-white" // Home sebelum scroll → putih
+                : scrolled
+                ? "text-green-600" // Saat scroll → hijau
+                : "text-black" // Halaman lain sebelum scroll → hitam
+            }`}
+          >
+            Situ Cipanten
+          </NavLink>
+
+        </motion.div>
 
         {/* Menu */}
         <motion.ul
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className={`hidden md:flex items-center gap-8 font-medium transition ${
-            scrolled ? "text-gray-800" : "text-white"
-          }`}
+          className="hidden md:flex items-center gap-8 font-medium"
         >
           {menuItems.map((item, index) => (
-            <motion.li
-              key={index}
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.1,
-                color: "#4ade80",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="cursor-pointer transition-colors"
-            >
-              {item}
+            <motion.li key={index}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `transition-colors ${
+                    isHome && !scrolled
+                      ? "text-white"
+                      : "text-black"
+                  } ${
+                    scrolled ? "hover:text-green-600" : "hover:text-green-400"
+                  } ${isActive ? "text-green-600 font-semibold" : ""}`
+                }
+              >
+                {item.name}
+              </NavLink>
             </motion.li>
           ))}
         </motion.ul>
 
         {/* Button */}
-        <motion.button
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 0 20px rgba(34, 197, 94, 0.5)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full transition"
-        >
-          Reservasi
-        </motion.button>
+        <motion.div whileHover={{ scale: 1.05 }}>
+          <NavLink
+            to="/reservasi"
+            className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full transition"
+          >
+            Reservasi
+          </NavLink>
+        </motion.div>
       </div>
     </motion.nav>
   );

@@ -1,16 +1,33 @@
-import React from "react";
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-const App = () => {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <main className="h-screen bg-[url('/hero.jpg')] bg-cover">
-        {/* konten */}
-      </main>
-    </>
-  );
-};
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./Pages/Footer";
 
-export default App;
+import Home from "./Pages/Home";
+import Tentang from "./Pages/Tentang";
+import Fasilitas from "./Pages/Fasilitas";
+import Aktivitas from "./Pages/Aktivitas";
+// import Galeri from "./pages/Galeri";
+// import Info from "./pages/Info";
+// import Kontak from "./pages/Kontak";
+
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tentang" element={<Tentang />} /> 
+        <Route path="/fasilitas" element={<Fasilitas />} />
+        <Route path="/aktivitas" element={<Aktivitas />} />
+         {/*<Route path="/galeri" element={<Galeri />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/kontak" element={<Kontak />} /> */} 
+       
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
+}

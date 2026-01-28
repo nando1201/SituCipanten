@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
@@ -25,6 +25,30 @@ export default function Navbar() {
     { name: "Info", path: "/info" },
     { name: "Kontak", path: "/kontak" },
   ];
+
+  const menuContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const menuItem = {
+    hidden: { opacity: 0, y: -30 }, // ⬅️ DI SINI
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+  };
+
 
   return (
     <motion.nav
@@ -56,19 +80,21 @@ export default function Navbar() {
 
         </motion.div>
 
+
         {/* Menu */}
         <motion.ul
+          variants={menuContainer}
+          initial="hidden"
+          animate="show"
           className="hidden md:flex items-center gap-8 font-medium"
         >
           {menuItems.map((item, index) => (
-            <motion.li key={index}>
+            <motion.li key={index} variants={menuItem}>
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
                   `transition-colors ${
-                    isHome && !scrolled
-                      ? "text-white"
-                      : "text-black"
+                    isHome && !scrolled ? "text-white" : "text-black"
                   } ${
                     scrolled ? "hover:text-green-600" : "hover:text-green-400"
                   } ${isActive ? "text-green-600 font-semibold" : ""}`
@@ -80,15 +106,8 @@ export default function Navbar() {
           ))}
         </motion.ul>
 
-        {/* Button */}
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <NavLink
-            to="/reservasi"
-            className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full transition"
-          >
-            Reservasi
-          </NavLink>
-        </motion.div>
+
+        
       </div>
     </motion.nav>
   );

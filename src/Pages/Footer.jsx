@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-green-700 to-green-600 text-white">
+    <footer className="bg-linear-to-br from-green-700 to-green-600 text-white">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
@@ -86,10 +86,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Scroll To Top */}
-      <button className="fixed bottom-6 right-6 bg-green-700 hover:bg-green-600 p-3 rounded-full shadow-lg transition">
-        <ArrowUp size={18} />
-      </button>
+    
     </footer>
   );
 }

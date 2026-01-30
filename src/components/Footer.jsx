@@ -1,18 +1,18 @@
 import {
   Facebook,
   Instagram,
-  Twitter,
   Youtube,
   MapPin,
   Phone,
   Mail,
-  ArrowUp,
 } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="bg-linear-to-br from-green-700 to-green-600 text-white">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+        
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold mb-4">Situ Cipanten</h2>
@@ -22,11 +22,20 @@ export default function Footer() {
             sempurna.
           </p>
 
+          {/* Social Media */}
           <div className="flex gap-3 mt-6">
-            <SocialIcon icon={<Facebook size={18} />} />
-            <SocialIcon icon={<Instagram size={18} />} />
-            <SocialIcon icon={<Twitter size={18} />} />
-            <SocialIcon icon={<Youtube size={18} />} />
+            <SocialIcon
+              icon={<Facebook size={18} />}
+              href="https://www.facebook.com/profile.php?id=61573233981488"
+            />
+            <SocialIcon
+              icon={<Instagram size={18} />}
+              href="https://www.instagram.com/situcipanten_mjlk/?hl=en"
+            />
+            <SocialIcon
+              icon={<Youtube size={18} />}
+              href="https://www.youtube.com/results?search_query=situ+cipanten+majalengka"
+            />
           </div>
         </div>
 
@@ -34,11 +43,31 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-4">Link Cepat</h3>
           <ul className="space-y-2 text-green-100 text-sm">
-            <li><a href="#" className="hover:text-white">Tentang Kami</a></li>
-            <li><a href="#" className="hover:text-white">Fasilitas</a></li>
-            <li><a href="#" className="hover:text-white">Aktivitas</a></li>
-            <li><a href="#" className="hover:text-white">Galeri</a></li>
-            <li><a href="#" className="hover:text-white">Kontak</a></li>
+            <li>
+              <NavLink to="/tentang" className="hover:text-white transition">
+                Tentang Kami
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/fasilitas" className="hover:text-white transition">
+                Fasilitas
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/aktivitas" className="hover:text-white transition">
+                Aktivitas
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/galeri" className="hover:text-white transition">
+                Galeri
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/kontak" className="hover:text-white transition">
+                Kontak
+              </NavLink>
+            </li>
           </ul>
         </div>
 
@@ -62,17 +91,21 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <MapPin size={18} />
               <span>
-                Desa Cipanten, Kec. Cijulang,<br />
-                Kab. Majalengka, Jawa Barat
+                Desa Gunung Kuning, Kec. Sindang <br />
+                Kab. Majalengka, Jawa Barat 45471 <br />
+                Indonesia
               </span>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={18} />
-              <span>+62 812-3456-7890</span>
+              <span>
+                +62 822-6260-0744 <br />
+                +62 857-5917-7885
+              </span>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} />
-              <span>info@situcipanten.com</span>
+              <span>wisatasitucipanten@gmail.com</span>
             </li>
           </ul>
         </div>
@@ -81,20 +114,26 @@ export default function Footer() {
       {/* Bottom */}
       <div className="border-t border-green-600">
         <div className="max-w-7xl mx-auto px-6 py-6 text-center text-sm text-green-100">
-          <p>© 2026 Situ Cipanten Tourism. All rights reserved.</p>
+          <p>© 2026 Fernando-Arnevin. All rights reserved.</p>
           <p className="mt-1">Designed with ❤️ for Indonesian natural beauty</p>
         </div>
       </div>
-
-    
     </footer>
   );
 }
 
-function SocialIcon({ icon }) {
+/* Reusable Social Icon */
+function SocialIcon({ icon, href }) {
   return (
-    <div className="w-9 h-9 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-500 cursor-pointer transition">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 flex items-center justify-center rounded-full
+                 bg-green-600 hover:bg-green-500 hover:scale-110
+                 transition-transform duration-300"
+    >
       {icon}
-    </div>
+    </a>
   );
 }

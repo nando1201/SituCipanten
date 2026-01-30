@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import Sejarah from "../components/Sejarah";
+import Awards from "../components/Awards";
 
 const Tentang = () => {
   const ref = useRef(null);
@@ -86,6 +87,7 @@ const Tentang = () => {
 
       {/* SEJARAH SECTION */}
       <Sejarah />
+      <Awards />
     </section>
   );
 };

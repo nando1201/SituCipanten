@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export default function Sejarah() {
   return (
@@ -32,25 +32,30 @@ export default function Sejarah() {
             viewport={{ once: true }}
           >
             <p className="mb-4 text-justify leading-relaxed text-gray-700">
-              Situ Cipanten awalnya merupakan sebuah danau alami yang terbentuk
-              dari sumber mata air pegunungan di wilayah Majalengka, Jawa Barat.
-              Sejak dahulu, kawasan ini dimanfaatkan oleh masyarakat sekitar
-              sebagai sumber air dan tempat beristirahat karena suasananya yang
-              sejuk dan tenang.
+              Situ Cipanten merupakan danau yang terbentuk secara alami yang sudah 
+              sejak lama berfungsi sebagai wadah penampung air dan pendukung ekosistem
+              perairan darat. Pada tahun 1973 pemerintah setempat melakukan pembangunan
+              infrastruktur bendungan air untuk membantu dalam memastikan pasokan air
+              yang stabil dan teratur yang digunakan untuk berbagai sektor seperti
+              pertanian, industri, perumahan, dan konsumsi umum.
             </p>
 
             <p className="mb-4 text-justify leading-relaxed text-gray-700">
-              Seiring berjalannya waktu, keindahan alam yang dimiliki Situ Cipanten
-              mulai dikenal luas. Pemerintah daerah dan masyarakat setempat
-              kemudian berinisiatif mengembangkan kawasan ini menjadi destinasi
-              wisata alam tanpa menghilangkan nilai keasrian dan kelestariannya.
+              Seiring bergulirnya waktu, situ cipanten mulai berkembang menjadi
+              destinasi wisata semenjak tahun 1998 atas prakarsa masyarakat dan
+              pemerintah desa setempat dan mulai dikenal secara meluas pada tahun
+              2004 dengan mulai banyaknya pengunjung yang berdatangan dari luar
+              daerah. Dalam proses pengembangan situ cipanten sebagai destinasi
+              wisata, telah dibuat dan dikembangkan sejumlah fasilitas serta berbagai
+              spot favorit yang bisa dinikmati pengunjung.
             </p>
 
             <p className="text-justify leading-relaxed text-gray-700">
-              Hingga saat ini, Situ Cipanten terus berkembang sebagai salah satu
-              ikon wisata unggulan Majalengka yang memadukan keindahan alam,
-              kearifan lokal, serta pengalaman wisata yang nyaman bagi setiap
-              pengunjung.
+              Pengelolaan awalnya dilakukan oleh karang taruna Desa Gunungkuning
+              sejak mulai tahun 2017, dan pada perkembangannya pengelolaan situ
+              cipanten pada saat ini sudah dilakukan melalui BUM Desa Karya Mekar 
+              yang dimulai sejak dari tahun 2021. Beragam fasilitas wisata diantaranya
+              seperti kapal dayung, bebek gowes, ayunan, sepeda gantung, dll
             </p>
           </motion.div>
 

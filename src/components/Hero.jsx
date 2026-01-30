@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { NavLink } from 'react-router-dom';
+
 
 export default function Hero() {
   return (
@@ -42,14 +44,17 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex justify-center gap-4 flex-col sm:flex-row"
-          >
+            >
+            <NavLink to="/tentang">
             <button className="bg-green-700 hover:bg-green-800 px-6 py-3 rounded-full transition">
               Jelajahi Sekarang
             </button>
-
-            <button className="border border-white/70 hover:bg-white hover:text-black px-6 py-3 rounded-full transition">
-              Hubungi Kami
-            </button>
+            </NavLink>
+            <NavLink to="/kontak"> 
+              <button className="border border-white/70 hover:bg-white hover:text-black px-6 py-3 rounded-full transition">
+                Hubungi Kami
+              </button>
+            </NavLink>
           </motion.div>
         </div>
       </div>

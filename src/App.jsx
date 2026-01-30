@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./Pages/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 import Home from "./Pages/Home";
 import Tentang from "./Pages/Tentang";
@@ -14,6 +15,7 @@ import Kontak from "./Pages/Kontak";
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -57,7 +57,7 @@ npm run dev
 Project akan berjalan di browser pada alamat:
 
 ```bash
-https://situ-cipanten.vercel.app/
+http://localhost:5173
 ```
 
 ---

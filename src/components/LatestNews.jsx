@@ -22,7 +22,7 @@ const news = [
     date: "10 Januari 2026",
 
     // Sumber gambar berita
-    src: "src/assets/berita1.png",
+    src: "public/assets/berita1.png",
 
     // URL berita lengkap (external link)
     url: "https://www.detik.com/jabar/cirebon-raya/d-8300890/situ-cipanten-jadi-primadona-wisata-majalengka-selama-libur-nataru",

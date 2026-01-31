@@ -17,28 +17,28 @@ const aktivitasData = [
     title: "Perahu & Kayak",
     desc: "Jelajahi keindahan danau dengan perahu kayuh atau kayak yang tersedia.",
     popular: true, // menandakan aktivitas favorit
-    image: "/src/assets/Perahu.jpg",
+    image: "assets/Perahu.jpg",
   },
   {
     icon: <FaFish className="text-3xl text-green-400" />,
     title: "Berenang",
     desc: "Area berenang yang aman dan nyaman di sekitar danau.",
     popular: true,
-    image: "/src/assets/Berenang.jpg",
+    image: "assets/Berenang.jpg",
   },
   {
     icon: <FaCampground className="text-3xl text-green-400" />,
     title: "Camping",
     desc: "Nikmati pengalaman bermalam di alam terbuka dengan fasilitas lengkap.",
     popular: false,
-    image: "/src/assets/Camp.png",
+    image: "assets/Camp.png",
   },
   {
     icon: <FaCamera className="text-3xl text-green-400" />,
     title: "Fotografi",
     desc: "Abadikan momen indah dengan latar danau dan pegunungan.",
     popular: false,
-    image: "/src/assets/Foto.png",
+    image: "assets/Foto.png",
   },
 ];
 

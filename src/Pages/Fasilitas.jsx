@@ -1,4 +1,7 @@
+// React dan hook useRef → untuk mereferensikan elemen DOM
 import React, { useRef } from "react";
+
+// Icon fasilitas dari react-icons
 import {
   FaUtensils,
   FaCampground,
@@ -9,8 +12,14 @@ import {
   FaGift,
   FaPrayingHands,
 } from "react-icons/fa";
+
+// motion → animasi, useInView → mendeteksi elemen masuk viewport
 import { motion, useInView } from "motion/react";
 
+/**
+ * Data fasilitas wisata
+ * → Berisi icon, judul, dan deskripsi fasilitas
+ */
 const fasilitasData = [
   {
     icon: <FaUtensils className="text-3xl text-green-600" />,
@@ -54,19 +63,30 @@ const fasilitasData = [
   },
 ];
 
+/**
+ * Komponen Fasilitas
+ * → Menampilkan daftar fasilitas yang tersedia di Situ Cipanten
+ */
 export default function Fasilitas() {
+  // ref → penanda elemen header yang akan dipantau
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // useInView → mengecek apakah elemen sudah masuk layar
+  const isInView = useInView(ref, {
+    once: true,        // animasi hanya dijalankan sekali
+    margin: "-100px",  // animasi aktif sedikit sebelum elemen terlihat penuh
+  });
 
   return (
+    // Section utama fasilitas
     <section className="w-full bg-linear-to-br from-white to-green-50 py-20">
       <div className="mx-auto max-w-7xl px-6">
         
-        {/* HEADER */}
+        {/* ===== HEADER SECTION ===== */}
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          ref={ref} // elemen yang dipantau useInView
+          initial={{ opacity: 0, y: 30 }} // posisi awal animasi
+          animate={isInView ? { opacity: 1, y: 0 } : {}} // animasi saat terlihat
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
@@ -79,21 +99,31 @@ export default function Fasilitas() {
           </p>
         </motion.div>
 
-        {/* GRID */}
+        {/* ===== GRID FASILITAS ===== */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {fasilitasData.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }} // posisi awal kartu
+              animate={isInView ? { opacity: 1, y: 0 } : {}} // animasi saat terlihat
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1, // efek muncul satu per satu
+              }}
               className="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition hover:shadow-lg"
             >
+              {/* Icon fasilitas */}
               {item.icon}
+
+              {/* Judul fasilitas */}
               <h3 className="mt-4 text-lg font-semibold text-green-700">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
+
+              {/* Deskripsi fasilitas */}
+              <p className="mt-2 text-sm text-gray-600">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </div>

@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/fasilitas" element={<Fasilitas />} />
         <Route path="/aktivitas" element={<Aktivitas />} />
         <Route path="/galeri" element={<Galeri />} />
-        <Route path="/info" element={<Info />} />
+        <Route path="/info" element={<Info />} /> 
         <Route path="/kontak" element={<Kontak />} /> 
        
       </Routes>

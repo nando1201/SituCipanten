@@ -88,7 +88,7 @@ Situ Cipanten merupakan destinasi wisata alam yang terletak di Kabupaten Majalen
 
 Website ini telah dideploy menggunakan **Vercel** dan dapat diakses melalui link berikut:
 
-🔗 **(https://situ-cipanten.vercel.app/)**
+🔗 **https://situ-cipanten.vercel.app/**
 
 ---
 

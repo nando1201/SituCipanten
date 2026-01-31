@@ -1,5 +1,5 @@
 // Import React Hooks
-// useState  → menyimpan state (status scroll)
+// useState  → menyimpan state (scroll & mobile menu)
 // useEffect → menjalankan efek samping (event listener scroll)
 import { useState, useEffect } from "react";
 
@@ -7,27 +7,38 @@ import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
 // Import NavLink & useLocation untuk routing
-// NavLink   → navigasi + active state
+// NavLink     → navigasi + active state
 // useLocation → mengetahui halaman aktif (pathname)
 import { NavLink, useLocation } from "react-router-dom";
 
-// Komponen Navbar
+// Import icon hamburger & close (X) untuk mobile
+import { Menu, X } from "lucide-react";
+
+// ================= KOMPONEN NAVBAR =================
 // Berfungsi sebagai navigasi utama website
 export default function Navbar() {
+
+  // ================= STATE =================
 
   // State untuk mengecek apakah halaman sudah di-scroll
   // true  → navbar berubah style
   // false → navbar default
   const [scrolled, setScrolled] = useState(false);
 
+  // State untuk membuka / menutup menu mobile
+  // true  → menu mobile terbuka
+  // false → menu mobile tertutup
+  const [isOpen, setIsOpen] = useState(false);
+
   // Mengambil lokasi route saat ini
   const location = useLocation();
 
-  // Effect untuk mendeteksi scroll halaman
+  // ================= EFFECT SCROLL =================
+  // Digunakan untuk mendeteksi scroll halaman
   useEffect(() => {
     // Fungsi yang dijalankan setiap kali scroll
     const handleScroll = () => {
-      // Jika scroll lebih dari 20px → scrolled = true
+      // Jika scroll lebih dari 20px → navbar dianggap sudah di-scroll
       setScrolled(window.scrollY > 20);
     };
 
@@ -41,8 +52,8 @@ export default function Navbar() {
   // Mengecek apakah halaman saat ini adalah Home
   const isHome = location.pathname === "/";
 
-  // Daftar menu navigasi
-  // Mudah ditambah / dikurangi
+  // ================= MENU ITEMS =================
+  // Daftar menu navigasi (mudah ditambah / dikurangi)
   const menuItems = [
     { name: "Beranda", path: "/" },
     { name: "Tentang", path: "/tentang" },
@@ -53,25 +64,23 @@ export default function Navbar() {
     { name: "Kontak", path: "/kontak" },
   ];
 
-  // Variants animasi container menu
-  // Digunakan untuk efek stagger (muncul satu-satu)
+  // ================= ANIMASI MENU DESKTOP =================
+
+  // Variants animasi container menu (stagger effect)
   const menuContainer = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,   // Delay antar item
-        delayChildren: 0.2,      // Delay sebelum item muncul
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
       },
     },
   };
 
-  // Variants animasi setiap item menu
+  // Variants animasi tiap item menu
   const menuItem = {
-    // Kondisi awal → transparan & turun dari atas
     hidden: { opacity: 0, y: -30 },
-
-    // Kondisi akhir → terlihat & posisi normal
     show: {
       opacity: 1,
       y: 0,
@@ -83,16 +92,17 @@ export default function Navbar() {
   };
 
   return (
-    // Navbar dengan animasi slide dari atas
+    // ================= NAVBAR =================
     <motion.nav
-      initial={{ y: -100 }}     // Posisi awal di luar layar
-      animate={{ y: 0 }}        // Masuk ke posisi normal
+      // Animasi navbar muncul dari atas
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         // Style navbar berdasarkan halaman & scroll
         isHome && !scrolled
-          ? "bg-transparent"                       // Home sebelum scroll
-          : "bg-white/80 backdrop-blur-sm shadow-lg" // Setelah scroll / halaman lain
+          ? "bg-transparent"
+          : "bg-white/80 backdrop-blur-sm shadow-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -105,17 +115,17 @@ export default function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className={`text-xl font-bold transition-colors duration-300 ${
               isHome && !scrolled
-                ? "text-white"      // Home sebelum scroll
+                ? "text-white"
                 : scrolled
-                ? "text-green-600"  // Setelah scroll
-                : "text-black"      // Halaman lain
+                ? "text-green-600"
+                : "text-black"
             }`}
           >
             Situ Cipanten
           </NavLink>
         </motion.div>
 
-        {/* ================= MENU ================= */}
+        {/* ================= MENU DESKTOP ================= */}
         <motion.ul
           variants={menuContainer}
           initial="hidden"
@@ -130,7 +140,9 @@ export default function Navbar() {
                   `transition-colors ${
                     isHome && !scrolled ? "text-white" : "text-black"
                   } ${
-                    scrolled ? "hover:text-green-600" : "hover:text-green-400"
+                    scrolled
+                      ? "hover:text-green-600"
+                      : "hover:text-green-400"
                   } ${
                     isActive ? "text-green-600 font-semibold" : ""
                   }`
@@ -142,7 +154,56 @@ export default function Navbar() {
           ))}
         </motion.ul>
 
+        {/* ================= BUTTON MOBILE ================= */}
+        {/* Hanya muncul di layar kecil */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`transition-colors ${
+              isHome && !scrolled ? "text-white" : "text-black"
+            }`}
+          >
+            {/* Icon berubah sesuai state */}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
+
+      {/* ================= MENU MOBILE ================= */}
+      {/* Dropdown menu untuk HP */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+        transition={{ duration: 0.3 }}
+        className={`md:hidden absolute top-full left-0 w-full ${
+          isHome && !scrolled
+            ? "bg-black/80 backdrop-blur-md"
+            : "bg-white shadow-lg"
+        }`}
+      >
+        <ul className="flex flex-col py-4">
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <NavLink
+                to={item.path}
+                // Tutup menu setelah klik
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `block px-6 py-3 transition-colors ${
+                    isHome && !scrolled
+                      ? "text-white hover:bg-white/10"
+                      : "text-black hover:bg-gray-100"
+                  } ${
+                    isActive ? "text-green-600 font-semibold" : ""
+                  }`
+                }
+              >
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
     </motion.nav>
   );
 }

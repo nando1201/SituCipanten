@@ -90,8 +90,6 @@ Website ini telah dideploy menggunakan **Vercel** dan dapat diakses melalui link
 
 🔗 **(https://situ-cipanten.vercel.app/)**
 
-> Catatan: Ganti link di atas dengan URL Vercel sesuai dengan project kamu.
-
 ---
 
 ## 📚 Catatan
@@ -107,4 +105,4 @@ Dibuat oleh:
 * **10125904 – Fernando Adriyan Salim**
 * **10125914 – Arnevin Renata Ahmad Barkah**
 
-Sebagai tugas perkuliahan pembuatan website wisata.
+Sebagai tugas perkuliahan pembuatan website.

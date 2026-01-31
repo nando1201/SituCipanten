@@ -57,7 +57,7 @@ npm run dev
 Project akan berjalan di browser pada alamat:
 
 ```bash
-http://localhost:5173
+https://situ-cipanten.vercel.app/
 ```
 
 ---
@@ -84,6 +84,16 @@ Situ Cipanten merupakan destinasi wisata alam yang terletak di Kabupaten Majalen
 
 ---
 
+## 🌐 Demo Website
+
+Website ini telah dideploy menggunakan **Vercel** dan dapat diakses melalui link berikut:
+
+🔗 **[https://nama-project-kamu.vercel.app](https://nama-project-kamu.vercel.app)**
+
+> Catatan: Ganti link di atas dengan URL Vercel sesuai dengan project kamu.
+
+---
+
 ## 📚 Catatan
 
 Project ini dibuat untuk keperluan **akademik** dan masih dapat dikembangkan lebih lanjut, baik dari segi fitur maupun tampilan.
@@ -94,7 +104,7 @@ Project ini dibuat untuk keperluan **akademik** dan masih dapat dikembangkan leb
 
 Dibuat oleh:
 
-* **10125904 – Fernando Adriyan Adriyan Salim**
+* **10125904 – Fernando Adriyan Salim**
 * **10125914 – Arnevin Renata Ahmad Barkah**
 
 Sebagai tugas perkuliahan pembuatan website wisata.

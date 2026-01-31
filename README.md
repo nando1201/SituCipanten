@@ -1,16 +1,100 @@
-# React + Vite
+# 🌄 Website Wisata Situ Cipanten
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project ini merupakan **tugas perkuliahan** yang bertujuan untuk membuat sebuah **website informasi wisata** menggunakan **React + Vite**.
 
-Currently, two official plugins are available:
+Website ini menyajikan informasi mengenai salah satu destinasi wisata alam di Jawa Barat, yaitu **Situ Cipanten** yang berlokasi di **Kabupaten Majalengka**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Tujuan Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Memenuhi tugas perkuliahan pembuatan website
+* Menerapkan konsep dasar React (component, props, state)
+* Menggunakan Vite sebagai build tool
+* Menggunakan Tailwind CSS untuk styling
+* Menyajikan informasi wisata secara informatif dan menarik
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Teknologi yang Digunakan
+
+* React JS
+* Vite
+* Tailwind CSS
+* JavaScript (ES6)
+* HTML & CSS
+
+---
+
+## ⚙️ Cara Menjalankan Project
+
+Pastikan **Node.js** sudah terinstall di komputer kamu.
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/username/nama-repo.git
+```
+
+### 2️⃣ Masuk ke Folder Project
+
+```bash
+cd nama-repo
+```
+
+### 3️⃣ Install Dependency
+
+```bash
+npm install
+```
+
+### 4️⃣ Jalankan Project
+
+```bash
+npm run dev
+```
+
+Project akan berjalan di browser pada alamat:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+## 📦 Build untuk Production
+
+Untuk membuat versi production:
+
+```bash
+npm run build
+```
+
+Untuk preview hasil build:
+
+```bash
+npm run preview
+```
+
+---
+
+## 🏞️ Tentang Situ Cipanten
+
+Situ Cipanten merupakan destinasi wisata alam yang terletak di Kabupaten Majalengka, Jawa Barat. Danau ini dikelilingi oleh perbukitan hijau dan pepohonan rindang yang menciptakan suasana sejuk, tenang, dan cocok untuk liburan keluarga maupun wisata alam.
+
+---
+
+## 📚 Catatan
+
+Project ini dibuat untuk keperluan **akademik** dan masih dapat dikembangkan lebih lanjut, baik dari segi fitur maupun tampilan.
+
+---
+
+## 👤 Author
+
+Dibuat oleh:
+
+* **10125904 – Fernando Adriyan Adriyan Salim**
+* **10125914 – Arnevin Renata Ahmad Barkah**
+
+Sebagai tugas perkuliahan pembuatan website wisata.

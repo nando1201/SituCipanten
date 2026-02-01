@@ -14,27 +14,27 @@ import { motion } from "motion/react";
  */
 const photos = [
   {
-    src: "src/assets/1.jpg",
+    src: "assets/1.jpg",
     alt: "Situ Cipanten",
   },
   {
-    src: "src/assets/2.jpg",
+    src: "assets/2.jpg",
     alt: "Gunung bersalju",
   },
   {
-    src: "src/assets/3.jpg",
+    src: "assets/3.jpg",
     alt: "Jalan berliku",
   },
   {
-    src: "src/assets/4.jpg",
+    src: "assets/4.jpg",
     alt: "Hutan tropis",
   },
   {
-    src: "src/assets/5.jpg",
+    src: "assets/5.jpg",
     alt: "Danau",
   },
   {
-    src: "src/assets/6.jpg",
+    src: "assets/6.jpg",
     alt: "Senja",
   },
 ];

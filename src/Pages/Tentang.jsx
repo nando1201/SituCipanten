@@ -100,7 +100,7 @@ const Tentang = () => {
           >
             <div className="overflow-hidden rounded-3xl shadow-xl">
               <img
-                src="/src/assets/tentang.png"
+                src="assets/tentang.png"
                 alt="Situ Cipanten"
                 className="h-90 full object-cover md:w-130"
               />

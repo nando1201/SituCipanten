@@ -24,7 +24,7 @@ const testimonials = [
     role: "Travel Blogger",
     message:
       "Akes jalan ke lokasi ada beberapa yang rusak parah...",
-    rating: 5,
+    rating: 4,
   },
   {
     name: "Rien",
@@ -32,7 +32,7 @@ const testimonials = [
     message: [
       "Kami tidak pernah menyangka akan menemukan tempat ini...",
     ],
-    rating: 4,
+    rating: 5,
   },
   {
     name: "Harry Priyadi",

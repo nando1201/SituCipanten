@@ -246,7 +246,7 @@ const Contact = () => {
               <div className="relative h-80 w-full">
                 {/* Google Maps Embed */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=..."
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.029112998694!2d108.3251659239966!3d-6.823925093173877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f2406b0ed6805%3A0x86493d5c4d863bc5!2sWisata%20Situ%20Cipanten!5e1!3m2!1sid!2sid!4v1770030140605!5m2!1sid!2sid"  
                   className="absolute inset-0 h-full w-full"
                   loading="lazy"
                   style={{ border: 0 }}

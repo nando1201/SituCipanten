@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // Import React Hooks
 // useState  → menyimpan state (scroll & mobile menu)
 // useEffect → menjalankan efek samping (event listener scroll)

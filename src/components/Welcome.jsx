@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // motion → digunakan untuk animasi (fade & slide)
 import { motion } from "motion/react";
 

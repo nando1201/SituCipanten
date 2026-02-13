@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // React & hook useRef → untuk referensi DOM (dipakai oleh useInView)
 import React, { useRef } from "react";
 

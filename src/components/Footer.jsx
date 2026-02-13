@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // Import icon dari lucide-react
 // Digunakan untuk icon sosial media & kontak
 import {

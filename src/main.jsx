@@ -1,3 +1,8 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
+
 // StrictMode → fitur bawaan React
 // Digunakan untuk membantu mendeteksi bug, deprecated API,
 // dan potensi masalah pada aplikasi saat development

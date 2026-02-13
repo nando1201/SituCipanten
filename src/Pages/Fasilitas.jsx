@@ -1,3 +1,7 @@
+//nama : Arnevin Renata Ahmad Barkah
+//nim : 10125914
+//kelas : IF 10
+
 // React dan hook useRef → untuk mereferensikan elemen DOM
 import React, { useRef } from "react";
 

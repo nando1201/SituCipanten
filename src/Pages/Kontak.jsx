@@ -1,3 +1,7 @@
+//nama : Arnevin Renata Ahmad Barkah
+//nim : 10125914
+//kelas : IF 10
+
 // Import React dan hooks
 // useState → menyimpan data input form
 // useRef → referensi elemen DOM

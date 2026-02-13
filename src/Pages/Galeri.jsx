@@ -1,4 +1,7 @@
-// components/Gallery.jsx
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 
 // Import React (dibutuhkan untuk membuat komponen React)
 import React from "react";

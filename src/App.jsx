@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // Import komponen routing dari react-router-dom
 // BrowserRouter → pembungkus utama routing
 // Routes → wadah kumpulan Route

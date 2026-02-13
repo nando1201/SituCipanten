@@ -1,3 +1,8 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
+
 // Import useEffect dari React
 // Digunakan untuk menjalankan efek samping saat terjadi perubahan state / props
 import { useEffect } from "react";

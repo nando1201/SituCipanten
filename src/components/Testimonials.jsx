@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // useState → untuk menyimpan state index slider
 import { useState } from "react";
 

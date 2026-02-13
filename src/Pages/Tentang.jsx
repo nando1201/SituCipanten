@@ -1,3 +1,8 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
+
 // Import React dan hook useRef
 // useRef → untuk mereferensikan elemen DOM
 import React, { useRef } from "react";

@@ -1,3 +1,7 @@
+//nama : Fernando Adriyan salim
+//nim : 10125904
+//kelas : IF 10
+
 // Import motion dari framer-motion
 // Digunakan untuk memberikan animasi pada elemen (fade, slide, dll)
 import { motion } from "framer-motion";
